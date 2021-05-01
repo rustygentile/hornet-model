@@ -7,3 +7,4 @@ Generated Files:
 
 * train_2019.csv
 * train_2020.csv
+* ./states_reduced

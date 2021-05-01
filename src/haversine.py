@@ -1,4 +1,9 @@
+"""
+Functions for converting between distance and latitude/longitude coordinates.
+"""
 import numpy as np
+
+__author__ = 'Rusty Gentile'
 
 
 def distance(lat1, long1, lat2, long2):
@@ -33,3 +38,37 @@ def distance(lat1, long1, lat2, long2):
     c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
 
     return r * c
+
+
+def new_point(lat, long, d, theta):
+    """
+    Approximates a new set of coordinates given an initial point, a direction,
+    and a distance. This is not entirely accurate since it treats the Earth's
+    surface as a plane. But for our purposes, it should be good enough.
+
+    Parameters
+    ----------
+    lat : float
+        Latititude of the initial point
+    long : float
+        Longitude of the initial point
+    d : float
+        Distance to the new point (meters)
+    theta: float
+        Angle of the direction between points
+
+    Returns
+    -------
+    new_lat, new_long
+        New coordinates
+    """
+
+    r = 6371e3
+    meters_per_degree = r / 180 * np.pi
+
+    new_lat = lat + d * np.cos(theta) / meters_per_degree
+    new_long = long + d * (
+               np.sin(theta) / np.cos(lat * np.pi / 180)
+               ) / meters_per_degree
+
+    return new_lat, new_long

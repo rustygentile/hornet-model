@@ -1,6 +1,7 @@
 import unittest
-from src.haversine import distance
- 
+import numpy as np
+from src.haversine import distance, new_point
+
 
 class DistanceTest(unittest.TestCase):
 
@@ -33,6 +34,26 @@ class DistanceTest(unittest.TestCase):
 
         # Accurate to within 300m is good enough
         self.assertLess(abs(d_stl_spk_act - d_stl_spk_exp), 300)
+
+
+class NewPointTest(unittest.TestCase):
+
+    def test_stl_new_points(self):
+        """
+        Generate some points within different distances from Seattle. Then
+        verify they are at approximately the correct distance.
+        """
+
+        stl_lat = 47.6062
+        stl_long = 122.3321
+        n = 20
+        theta_range = np.linspace(0, 2 * np.pi, n)
+        dist_range = np.linspace(1, 100e3, n)
+
+        for t, d in [(t, d) for t in theta_range for d in dist_range]:
+            new_lat, new_long = new_point(stl_lat, stl_long, d, t)
+            error = distance(new_lat, new_long, stl_lat, stl_long) - d
+            self.assertLess(abs(error / d), 0.005)
 
 
 if __name__ == '__main__':
