@@ -74,7 +74,7 @@ def reduce_shapefile():
                 return s.upper()
         return None
 
-    df = geo.read_file('./data/USA_Canada/USA_Canada_ShapefileMerge.shp')
+    df = geo.read_file('./data/USA_Canada_ShapefileMerge/USA_Canada_ShapefileMerge.shp')
     df['StateName'] = df['StateName'].apply(drop_states)
     df_reduced = df[df['StateName'].notnull()]
     df_reduced.to_file('./data/states_reduced/states_reduced.shp')

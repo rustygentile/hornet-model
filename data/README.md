@@ -12,7 +12,7 @@ Copy '2021MCMProblemC_DataSet.xlsx' to this folder.
 Location:
 https://www.sciencebase.gov/catalog/item/51bf5940e4b0eb321c798ec9
 
-Download and unzip here to a new folder named './USA_Canada'
+Download and unzip. Copy the folder named './USA_Canada_ShapefileMerge' to here.
 
 # Generated Files:
 

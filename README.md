@@ -1,6 +1,8 @@
 # Hornet Model
 
-This project models and simulates the outbreak of Asian giant hornets in the northwest.
+This project models and simulates the outbreak of Asian giant hornets in the northwest. Here, we have one of many possible simulated scenarios. This is plotted along with a logistic regression model which estimates the probabilty that an unconfirmed sighting is real.
+
+![combined](./images/combined_models.png)
 
 ## Setup
 
@@ -24,7 +26,7 @@ In case there are issues, see [also](https://github.com/geopandas/geopandas/issu
 
 You will need:
 * '2021MCMProblemC_DataSet.xlsx'
-* 'USA_Canda.zip'
+* 'USA_Canada_ShapefileMerge'
 
 See [also](./data/README.md).
 
@@ -34,10 +36,10 @@ Run the files in this order:
 
 ```
 python prep_data.py
-```
-```
-python run_regression.py
-```
-```
 python run_sims.py
+python run_regression.py
+python plot_sims.py
+python plot_regression.py
 ```
+
+I.e. prep data -> run -> plot
