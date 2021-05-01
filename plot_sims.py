@@ -1,9 +1,11 @@
 import geopandas as geo
 import matplotlib.pyplot as plt
 import pandas as pd
+import matplotlib
 
 __author__ = 'Rusty Gentile'
 
+matplotlib.rcParams.update({'font.size': 8})
 states = geo.read_file('./data/states_reduced/states_reduced.shp')
 n_sims = 10
 
