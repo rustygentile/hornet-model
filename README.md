@@ -1,8 +1,6 @@
 # Hornet Model
 
-This project models and simulates the outbreak of Asian giant hornets in the northwest. Here, we have one of many possible simulated scenarios. This is plotted along with a logistic regression model which estimates the probabilty that an unconfirmed sighting is real.
-
-![combined](./images/combined_models.png)
+This project models and simulates the outbreak of Asian giant hornets in the northwest. For a more detailed writeup, see also: https://my-hornet-model.readthedocs.io/
 
 ## Setup
 
