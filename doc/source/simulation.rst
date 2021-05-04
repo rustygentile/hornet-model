@@ -110,4 +110,22 @@ Plotting the population of hives from selected simulations with geography provid
 Model Analysis
 --------------
 
-TODO...
+Coming back to our basic hive model, this is of course, an exponential growth model since the change in population from one year to another is:
+
+	| :math:`N_{t+1} - N_t = (p_s n_q p_{qs} - 1) N_t`
+
+Converting to a continuous time scale:
+
+	| :math:`\frac{dN}{dt} = (p_s n_q p_{qs} - 1)N(t)`
+
+Solving the ODE:
+
+	| :math:`N(t) = N(0) e^{(p_s n_q p_{qs} - 1)t}`
+
+So for our conservative and aggressive simulation parameters, we have with :math:`t` being years:
+
+	| :math:`N_c(t) = 5 e^{0.2 t}`
+
+	| :math:`N_a(t) = 10 e^{1.7 t}`
+
+A more robust model might include a population carrying capacity. In this case, though, we are only interested in the initial time period before the population becomes established. So assuming the carrying capacity is far from being reached, this model is a reasonable choice.

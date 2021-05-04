@@ -15,4 +15,21 @@ The goal of this effort is to develop a model that can aid in classifying report
 Data Sets
 ---------
 
-TODO...
+Data for the models in this project was taken from the Consortium for Mathematics and Its Applications (COMAP) Mathematical Contest in Modeling (MCM). The main project data set can be downloaded from `here <https://www.comap.com/undergraduate/contests/mcm/contests/2021/problems/2021_MCM_Problem_C_Data.zip>`_ . This data set catalogues sightings of Asian giant hornets in North America reported by the general public. Data is organized in the following columns:
+
+================  ==============================================================
+Column            Description
+================  ==============================================================
+GlobalID          Unique identifier for each data entry.
+Detection Date    When the sighting occurred.
+Submission Date   When the sighting was reported to officials.
+Latitude          Location of the sighting.
+Longitude         Location of the sighting.
+Notes             Provided by the reporter.
+Lab Status        'Positive ID', 'Negative ID', 'unverified', or 'unprocessed'
+Lab Comments      Feedback from the lab.
+================  ==============================================================
+
+There are 4440 rows of data with not every field containing an entry. Sightings are confined mainly to the Northwest United States (Washington) and British Columbia, Canada.
+
+A geography shapefile taken from `here <https://www.sciencebase.gov/catalog/item/51bf5940e4b0eb321c798ec9>`_ was also used.
