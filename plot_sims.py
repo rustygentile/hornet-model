@@ -1,26 +1,41 @@
-import geopandas as geo
 import matplotlib.pyplot as plt
 import pandas as pd
 import matplotlib
+import matplotlib.ticker as ticker
 
 __author__ = 'Rusty Gentile'
 
-matplotlib.rcParams.update({'font.size': 8})
-states = geo.read_file('./data/states_reduced/states_reduced.shp')
+matplotlib.rcParams.update({'font.size': 10})
 n_sims = 10
+n_years = 5
 
-for k in range(10):
+fig, ax = plt.subplots(1, 2, figsize=(10, 4))
 
+for k in range(n_sims):
+    df_sim = pd.read_csv(f'./data/results/results_cons_sim_{k}.csv')
+    gb_sim = df_sim.groupby('year')
+    ax[0].plot(gb_sim['year'].count(), label=f'sim #{k+1}')
+
+
+ax[0].xaxis.set_major_locator(ticker.MaxNLocator(n_years))
+ax[0].xaxis.set_major_formatter(ticker.FormatStrFormatter('%d'))
+ax[0].set_xlabel('Year')
+ax[0].set_ylabel('N Hives')
+ax[0].set_title('Conservative Assumptions')
+ax[0].legend()
+
+
+for k in range(n_sims):
     df_sim = pd.read_csv(f'./data/results/results_aggr_sim_{k}.csv')
-    ax = states.plot(alpha=0.4, edgecolor='black')
+    gb_sim = df_sim.groupby('year')
+    ax[1].plot(gb_sim['year'].count(), label=f'sim #{k+1}')
 
-    for y in range(2019, 2024):
-        df_y = df_sim[df_sim['year'] == y]
-        xs = df_y['Longitude']
-        ys = df_y['Latitude']
-        ax.scatter(xs, ys, s=2, label=f'{y} : N = {len(xs)}')
+ax[1].xaxis.set_major_locator(ticker.MaxNLocator(n_years))
+ax[1].xaxis.set_major_formatter(ticker.FormatStrFormatter('%d'))
+ax[1].set_xlabel('Year')
+ax[1].set_ylabel('N Hives')
+ax[1].set_title('Aggressive Assumptions')
+ax[1].legend()
 
-    plt.title(f'Simulation #: {k}')
-    plt.legend()
-
+fig.savefig('./images/simulation_results.png')
 plt.show()
