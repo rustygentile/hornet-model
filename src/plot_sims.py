@@ -38,4 +38,6 @@ ax[1].set_title('Aggressive Assumptions')
 ax[1].legend()
 
 fig.savefig('./images/simulation_results.png')
-plt.show()
+
+if __name__ == '__main__':
+    plt.show()

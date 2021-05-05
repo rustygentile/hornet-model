@@ -33,11 +33,6 @@ See [also](./data/README.md).
 Run the files in this order:
 
 ```
-python prep_data.py
-python run_sims.py
-python run_regression.py
-python plot_sims.py
-python plot_regression.py
+python run_models.py
+python run_plots.py
 ```
-
-I.e. prep data -> run -> plot

@@ -106,7 +106,8 @@ def plot_models(sim_year=None, sim_k=None):
     return fig
 
 
+plot_models().savefig('./images/regression_results.png')
+plot_models(sim_k=9, sim_year=2023).savefig('./images/feature_generation.png')
+
 if __name__ == '__main__':
-    plot_models().savefig('./images/regression_results.png')
-    plot_models(sim_k=9, sim_year=2023).savefig('./images/feature_generation.png')
     plt.show()

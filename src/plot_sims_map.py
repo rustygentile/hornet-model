@@ -65,7 +65,9 @@ def plot_selected():
         ax[1].legend(loc='lower left')
 
     fig.savefig('./images/simulation_results_geo.png')
-    plt.show()
 
 
 plot_selected()
+
+if __name__ == '__main__':
+    plt.show()

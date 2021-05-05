@@ -64,4 +64,6 @@ legend_2020.legendHandles[1]._alpha = 1
 legend_2020.legendHandles[2]._alpha = 1
 
 fig.savefig('./images/training_data.png')
-plt.show()
+
+if __name__ == '__main__':
+    plt.show()
