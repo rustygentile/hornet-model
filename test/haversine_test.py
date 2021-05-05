@@ -17,8 +17,8 @@ class DistanceTest(unittest.TestCase):
         d_ny_orl_exp = 1511e3
         d_ny_orl_act = distance(ny_lat, ny_long, orl_lat, orl_long)
 
-        # Accurate to within 300m is good enough
-        self.assertLess(abs(d_ny_orl_act - d_ny_orl_exp), 300)
+        # Accurate to within 500m is good enough
+        self.assertLess(abs(d_ny_orl_act - d_ny_orl_exp), 500)
 
     def test_stl_spk(self):
         """Calculate the distance between Seattle and Spokane"""
@@ -32,8 +32,8 @@ class DistanceTest(unittest.TestCase):
         d_stl_spk_exp = 367.3e3
         d_stl_spk_act = distance(stl_lat, stl_long, spk_lat, spk_long)
 
-        # Accurate to within 300m is good enough
-        self.assertLess(abs(d_stl_spk_act - d_stl_spk_exp), 300)
+        # Accurate to within 500m is good enough
+        self.assertLess(abs(d_stl_spk_act - d_stl_spk_exp), 500)
 
 
 class NewPointTest(unittest.TestCase):

@@ -37,7 +37,7 @@ def plot_selected():
     states.plot(alpha=0.4, edgecolor='black', ax=ax[1])
 
     # Selected simulations
-    cons_k = 9
+    cons_k = 3
     agg_k = 4
 
     df_agg = pd.read_csv(f'./data/results/results_aggr_sim_{agg_k-1}.csv')
@@ -52,7 +52,7 @@ def plot_selected():
         ax[0].set_xlim(left=-125, right=-121)
         ax[0].set_ylim(bottom=47.5, top=50)
         ax[0].xaxis.set_major_formatter(ticker.FormatStrFormatter('%d'))
-        ax[0].legend()
+        ax[0].legend(loc='lower left')
 
         df_y_agg = df_agg[df_agg['year'] == y]
         xs_agg = df_y_agg['Longitude']
@@ -62,7 +62,7 @@ def plot_selected():
         ax[1].set_xlim(left=-125, right=-121)
         ax[1].set_ylim(bottom=47.5, top=50)
         ax[1].xaxis.set_major_formatter(ticker.FormatStrFormatter('%d'))
-        ax[1].legend()
+        ax[1].legend(loc='lower left')
 
     fig.savefig('./images/simulation_results_geo.png')
     plt.show()

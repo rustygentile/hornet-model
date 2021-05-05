@@ -33,7 +33,7 @@ def distance(lat1, long1, lat2, long2):
     dlambda = (long2 - long1) * np.pi / 180
 
     a = np.sin(dphi / 2) * np.sin(dphi / 2) + np.cos(phi1) * np.cos(phi2) \
-        * np.sin(dlambda / 2) * np.sin(dlambda) / 2
+        * np.sin(dlambda / 2) * np.sin(dlambda / 2)
 
     c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
 

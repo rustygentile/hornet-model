@@ -82,7 +82,7 @@ Two sets of parameters were used. The first makes very conservative assumptions 
 
 The second makes more aggressive assumptions: 
 
-	| :math:`N_0 = 10`
+	| :math:`N_0 = 14`
 
 	| :math:`p_s = 0.6` 
 	
@@ -126,6 +126,6 @@ So for our conservative and aggressive simulation parameters, we have with :math
 
 	| :math:`N_c(t) = 5 e^{0.2 t}`
 
-	| :math:`N_a(t) = 10 e^{1.7 t}`
+	| :math:`N_a(t) = 14 e^{1.7 t}`
 
 A more robust model might include a population carrying capacity. In this case, though, we are only interested in the initial time period before the population becomes established. So assuming the carrying capacity is far from being reached, this model is a reasonable choice.

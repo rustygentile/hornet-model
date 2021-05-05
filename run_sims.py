@@ -39,7 +39,7 @@ def run_aggressive_sim():
     df1 = df1[df1['ID'] == 1]
 
     df2 = pd.read_csv('./data/train_2020.csv')
-    df2 = df1[df1['ID'] == 1]
+    df2 = df2[df2['ID'] == 1]
 
     df = pd.concat([df1, df2])
 

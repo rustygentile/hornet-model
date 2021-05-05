@@ -47,4 +47,4 @@ def make_and_run_model(year, use_ts=False):
 
     # Make predictions on the test data
     df_test['Probability'] = model.predict_proba(X).T[1]
-    df_train.to_csv(f'./data/results/test_predictions_{year}.csv')
+    df_test.to_csv(f'./data/results/test_predictions_{year}.csv')
